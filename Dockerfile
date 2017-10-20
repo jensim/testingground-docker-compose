@@ -4,10 +4,7 @@ WORKDIR /usr/src/app
 
 COPY backend/package.json .
 RUN npm i
-COPY backend/ .
-RUN rm -rf public
-COPY frontend/ frontend/
-RUN cd frontend && npm i && cd .. && mv frontend/dist public && rm -rf frontend
+COPY backend/app.js .
 
 EXPOSE 3000
 
